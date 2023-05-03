@@ -1,6 +1,17 @@
 let index = 0;
 let staffResponse = [];
 
+const defaultValue = '...';
+const staffNotFound = {
+    image: '../img/not-found-image.png',
+    name: defaultValue,
+    species: defaultValue,
+    dateOfBirth: defaultValue,
+    patronus: defaultValue,
+    house: defaultValue,
+    ancestry: defaultValue
+};
+
 async function getStaff() {
     return new Promise(async (resolve, reject) => {
         const response = await fetch('https://hp-api.onrender.com/api/characters/staff');
@@ -15,23 +26,23 @@ async function getStaff() {
     });
 }
 
-async function searchStaff() {
+async function searchStaff(event) {
+    event.preventDefault();
     const name = document.getElementById('input__search');
-    const staffFiltered  = staffResponse.filter((staff, i) => {
+    const staffFiltered = staffResponse.filter((staff, i) => {
         index = i;
         return staff.name.toLowerCase() === name.value.toLowerCase()
     });
-    if (staffFiltered.length === 0 ) {
-        // validate not found staff
+    if (staffFiltered.length === 0) {
+        showStaff(staffNotFound);
     } else {
-        const [ staff ] = staffFiltered;
+        const [staff] = staffFiltered;
         showStaff(staff);
     }
 }
 
 
 function showStaff(staff) {
-    console.log(staff);
     const image = document.getElementById('image');
     image.src = staff.image;
     const name = document.getElementById('name');
@@ -51,16 +62,18 @@ function showStaff(staff) {
 
 function showPrev() {
     index--;
-    if(index < 0) {
+    if (index < 0) {
         index = staffResponse.length - 1;
     }
     const staff = staffResponse.at(index);
     showStaff(staff);
 }
 
-function showNext() {
-    index++;
-    if(index > staffResponse.length - 1) {
+function showNext(isLoadInitial = false) {
+    if (!isLoadInitial) {
+        index++;
+    }
+    if (index > staffResponse.length - 1) {
         index = 0;
     }
     const staff = staffResponse.at(index);
@@ -69,10 +82,18 @@ function showNext() {
 
 window.onload = () => {
     getStaff().then(() => {
-        showNext();
+        showNext(true);
     })
     const buttonSearch = document.getElementById('search__btn');
     buttonSearch.onclick = searchStaff;
+
+    const inputSearch = document.querySelector('.input__search');
+    inputSearch.addEventListener('keypress', (event) => {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            searchStaff(event);
+        }
+    })
 
     const btnNext = document.getElementById('button__next');
     btnNext.onclick = showNext;

@@ -1,6 +1,13 @@
 let index = 0;
 let spellsResponse = [];
 
+const defaultValue = '...';
+const spellNotFound = {
+    nameMain: defaultValue,
+    nameContent: defaultValue,
+    description: defaultValue
+}
+
 async function getSpells() {
     return new Promise(async (resolve, reject) => {
         const response = await fetch('https://hp-api.onrender.com/api/spells');
@@ -15,14 +22,15 @@ async function getSpells() {
     });
 }
 
-async function searchSpells() {
+async function searchSpells(event) {
+    event.preventDefault();
     const name = document.getElementById('input__search');
     const spellsFiltered  = spellsResponse.filter((spells, i) => {
         index = i;
         return spells.name.toLowerCase() === name.value.toLowerCase()
     });
     if (spellsFiltered.length === 0) {
-        // validate not found spells
+        showStudent(studentNotFound);
     } else {
         const [ spells ] = spellsFiltered;
         showSpells(spells);
@@ -48,8 +56,10 @@ function showPrev() {
     showSpells(spell);
 }
 
-function showNext() {
-    index++;
+function showNext(isLoadInitial = false) {
+    if (!isLoadInitial) {
+        index++;
+    }
     if(index > spellsResponse.length - 1) {
         index = 0;
     }
@@ -59,10 +69,18 @@ function showNext() {
 
 window.onload = () => {
     getSpells().then(() => {
-        showNext();
+        showNext(true);
     })
     const buttonSearch = document.getElementById('search__btn');
     buttonSearch.onclick = searchSpells;
+
+    const inputSearch = document.querySelector('.input__search');
+    inputSearch.addEventListener('keypress',(event) => {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            searchStudent(event);
+        }
+    })
 
     const btnNext = document.getElementById('button__next');
     btnNext.onclick = showNext;
