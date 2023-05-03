@@ -1,0 +1,323 @@
+body {
+    margin: 0;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 100%), #010E1E;
+    background-repeat: no-repeat;
+}
+
+.mainconfig {
+    display: flex;
+    flex-direction: column;
+}
+
+.second__main {
+    margin: 0px;
+}
+
+.icon__nav {
+    font-family: 'Lexend Zetta', sans-serif;
+    background-color: black;
+    color: white;
+    padding: 1px;
+    font-weight: 400;
+    font-size: 17px;
+    text-align: start;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.google_translate_element {
+    display: flex;
+    justify-content: end;
+    margin: 10px;
+    align-self: flex-end;
+}
+
+.icon__site {
+    size: 10px;
+    width: 40px;
+    height: 40px;
+    align-items: start;
+    margin: 0px 5px 0px 10px;
+}
+
+.image__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 700px;
+    left: 60px;
+    top: 70px;
+    background-image: url("../img/header-blue.png");
+    
+}
+
+.hogwarts__symbol {
+    position: absolute;
+    height: 500px;
+    width: 490px;
+}
+
+.btn__options {
+    display: flex;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    justify-content: space-evenly;
+    
+}
+
+.btn__students {
+    background-image: url("../img/students.png");
+    background-position: center;
+    width: 498px;
+    padding: 30px;
+    height: 113px;
+    margin: 20px 10px;
+    font-size: 25px;
+    border: 0;
+    border-radius: 60px;
+    color: white;
+    font-weight: 600;
+    font-family: 'Lexend Giga', sans-serif;
+}
+
+.btn__students:hover {
+    background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.500),rgba(0, 0, 0, 0.25)
+    ),
+    url("../img/students.png") no-repeat;
+    background-position: center;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 300ms linear; 
+}
+
+.btn__staff {
+    background-image: url("../img/staff.png");
+    background-position: center;
+    width: 498px;
+    padding: 30px;
+    height: 113px;
+    margin: 20px 10px;
+    font-size: 25px;
+    border: 0;
+    border-radius: 60px;
+    color: white;
+    font-weight: 600;
+    font-family: 'Lexend Giga', sans-serif;
+}
+
+.btn__staff:hover {
+    background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.500),rgba(0, 0, 0, 0.25)
+    ),
+    url("../img/staff.png") no-repeat;
+    background-position: center;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 300ms linear; 
+}
+
+.btn__spells {
+    background-image: url("../img/spells.png");
+    background-position: center;
+    width: 498px;
+    padding: 30px;
+    height: 113px;
+    margin: 20px 10px;
+    font-size: 25px;
+    border: 0;
+    border-radius: 60px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Lexend Giga', sans-serif;
+}
+
+.btn__spells:hover {
+    background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.500),rgba(0, 0, 0, 0.25)
+    ),
+    url("../img/spells.png") no-repeat;
+    background-position: center;
+    font-size: 30px;
+    transition: 300ms linear; 
+}
+
+.titulo__card {
+    font-family: 'Lexend Giga', sans-serif;
+}
+
+.card__text {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    font-weight: normal;
+    
+}
+
+.hp__text {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 17px;
+    padding: 10px;
+    margin: 20px;
+    width: 700px;
+    height: 400px;
+    border-radius: 20px;
+}
+
+.kid__img {
+    width: 700px;
+    border-radius: 20px;
+}
+
+/* .castle__icon {
+    text-align: center;
+    height: 150px;
+    margin-bottom: 45px;
+} */
+
+.am__text {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 17px;
+    padding: 10px;
+    margin: 5px;
+    width: 700px;
+    height: 400px;
+    border-radius: 20px;
+}
+
+.know__more__title {
+    font-family: 'Lexend Giga', sans-serif;
+}
+
+.knowmore__btn {
+    color: white;
+    font-size: 27px;
+    margin-top: 500px;
+    margin-bottom: 50px;
+    display: flex;
+    font-family: 'Tenor Sans', sans-serif;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn__moreopt1 {
+    text-align: start;
+    padding-left: 25px;
+    justify-content: center;
+    width: 715px;
+    height: 65px;
+    font-size: 19px;
+    margin: 7px;
+    border-radius: 11px;
+    cursor: pointer;
+    background-color: #0000005b;
+    border: none;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+.btn__moreopt1:hover {
+    font-size: 20px;
+    width: 720px;
+    height: 70px;
+    transition: 500ms linear; 
+}
+
+.btn__moreopt2 {
+    text-align: start;
+    padding-left: 25px;
+    justify-content: center;
+    width: 715px;
+    height: 65px;
+    font-size: 19px;
+    margin: 7px;
+    border-radius: 11px;
+    cursor: pointer;
+    background-color: #0000005b;
+    border: none;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    }
+
+.btn__moreopt2:hover {
+    font-size: 20px;
+    width: 720px;
+    height: 70px;
+    transition: 500ms linear;
+}
+
+footer {
+    background-color: #00000034;
+    height: 500px;
+    color: white;
+    align-items: center;
+    text-align: center;
+}
+
+.itsmehi {
+    width: 160px;
+    height: 162px;
+    border-radius: 100px;
+    align-items: center;
+    margin: 60px 35px 35px 35px;
+    justify-content: center;
+}
+
+.credit__text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+.contact__stuff {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 57px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.git {
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+}
+
+.link {
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+}
+
+.insta {
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+}
+
+*::-webkit-scrollbar {
+    height: 6px;
+    width: 7px;
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: black;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #8C8C8C;
+    border-radius: 10px;
+  }
