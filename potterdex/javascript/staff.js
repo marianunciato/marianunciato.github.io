@@ -3,8 +3,8 @@ let staffResponse = [];
 
 const defaultValue = '...';
 const staffNotFound = {
-    image: '../img/not-found-image.png',
-    name: defaultValue,
+    image: "./potterdex/img/not-found-image.png",
+    name: 'Not found :)',
     species: defaultValue,
     dateOfBirth: defaultValue,
     patronus: defaultValue,
@@ -43,10 +43,10 @@ async function searchStaff(event) {
 
 
 function showStaff(staff) {
-    const image = document.getElementById('image');
-    image.src = staff.image;
     const name = document.getElementById('name');
     name.innerText = staff.name;
+    const image = document.getElementById('image');
+    image.src = staff.image;
     const species = document.getElementById('species');
     species.innerText = staff.species;
     const dateOfBirth = document.getElementById('birth');
@@ -96,7 +96,7 @@ window.onload = () => {
     })
 
     const btnNext = document.getElementById('button__next');
-    btnNext.onclick = showNext;
+    btnNext.onclick = () => showNext(false);
     const btnPrev = document.getElementById('button__previous');
     btnPrev.onclick = showPrev;
 }

@@ -3,8 +3,8 @@ let studentsResponse = [];
 
 const defaultValue = '...';
 const studentNotFound = {
-    image: './img/not-found-image.png',
-    name: defaultValue,
+    name: 'Not found :(',
+    image: "./potterdex/img/not-found-image.png",
     species: defaultValue,
     dateOfBirth: defaultValue,
     patronus: defaultValue,
@@ -43,10 +43,10 @@ async function searchStudent(event) {
 
 
 function showStudent(student) {
-    const image = document.getElementById('image');
-    image.src = student.image;
     const name = document.getElementById('name');
     name.innerText = student.name;
+    const image = document.getElementById('image');
+    image.src = student.image;
     const species = document.getElementById('species');
     species.innerText = student.species;
     const dateOfBirth = document.getElementById('birth');
@@ -63,14 +63,16 @@ function showStudent(student) {
 function showPrev() {
     index--;
     if (index < 0) {
-        index = studentssResponse.length - 1;
+        index = studentsResponse.length - 1;
     }
     const student = studentsResponse.at(index);
     showStudent(student);
 }
 
 function showNext(isLoadInitial = false) {
+    console.log(isLoadInitial)  
     if (!isLoadInitial) {
+        console.log(isLoadInitial)
         index++;
     }
     if (index > studentsResponse.length - 1) {
@@ -96,7 +98,7 @@ window.onload = () => {
     })
 
     const btnNext = document.getElementById('button__next');
-    btnNext.onclick = showNext;
+    btnNext.onclick = () => showNext(false);
     const btnPrev = document.getElementById('button__previous');
     btnPrev.onclick = showPrev;
 }

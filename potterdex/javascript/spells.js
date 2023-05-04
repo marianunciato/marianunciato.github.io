@@ -1,19 +1,18 @@
 let index = 0;
-let spellsResponse = [];
+let spellResponse = [];
 
 const defaultValue = '...';
 const spellNotFound = {
-    nameMain: defaultValue,
-    nameContent: defaultValue,
+    name: 'Not found :(',
     description: defaultValue
-}
+};
 
-async function getSpells() {
+async function getSpell() {
     return new Promise(async (resolve, reject) => {
         const response = await fetch('https://hp-api.onrender.com/api/spells');
         try {
             if (response.status === 200) {
-                spellsResponse = await response.json();
+                spellResponse = await response.json();
                 resolve();
             }
         } catch (err) {
@@ -22,68 +21,67 @@ async function getSpells() {
     });
 }
 
-async function searchSpells(event) {
+async function searchSpell (event) {
     event.preventDefault();
-    const name = document.getElementById('input__search');
-    const spellsFiltered  = spellsResponse.filter((spells, i) => {
+    const name = document.getElementById ('input__search');
+    const spellFiltered = spellResponse.filter((spells, i) => {
         index = i;
         return spells.name.toLowerCase() === name.value.toLowerCase()
     });
-    if (spellsFiltered.length === 0) {
-        showStudent(studentNotFound);
+    if (spellFiltered.length === 0) {
+        showSpell(spellNotFound);
     } else {
-        const [ spells ] = spellsFiltered;
-        showSpells(spells);
+        const [spells] = spellFiltered;
+        showSpell(spells);
     }
 }
 
-function showSpells(spells) {
-    const description = document.getElementById('spell__description');
-    console.log(spells);
+function showSpell(spells) {
     const nameMain = document.getElementById('spell__title');
-    const nameContent = document.getElementById('spell__name');
     nameMain.innerText = spells.name;
-    nameContent.innerText = spells.name;
-    description.innerText = spells.description; 
+    const description = document.getElementById('spell__description');
+    description.innerText = spells.description;
 }
 
 function showPrev() {
     index--;
-    if(index < 0) {
-        index = spellsResponse.length - 1;
+    if (index < 0) {
+        index = spellResponse.length - 1;
     }
-    const spell = spellsResponse.at(index);
-    showSpells(spell);
+    const spells = spellsResponse.at(index);
+    showSpell(spells);
 }
 
 function showNext(isLoadInitial = false) {
+    console.log(isLoadInitial)  
     if (!isLoadInitial) {
+        console.log(isLoadInitial)
         index++;
     }
-    if(index > spellsResponse.length - 1) {
+    if (index > spellResponse.length - 1) {
         index = 0;
     }
-    const spell = spellsResponse.at(index);
-    showSpells(spell);
+    const spells = spellResponse.at(index);
+    showSpell(spells);
 }
 
 window.onload = () => {
-    getSpells().then(() => {
+    getSpell().then(() => {
         showNext(true);
     })
     const buttonSearch = document.getElementById('search__btn');
-    buttonSearch.onclick = searchSpells;
+    buttonSearch.onclick = searchSpell;
 
     const inputSearch = document.querySelector('.input__search');
-    inputSearch.addEventListener('keypress',(event) => {
-        if (event.key === "Enter") {
+    inputSearch.addEventListener('keypress', (event) => {
+        if (event.key === 'Enter') {
             event.preventDefault();
-            searchStudent(event);
+            searchSpell(event);
         }
     })
-
+    
     const btnNext = document.getElementById('button__next');
-    btnNext.onclick = showNext;
+    btnNext.onclick = () => showNext(false);
     const btnPrev = document.getElementById('button__previous');
     btnPrev.onclick = showPrev;
 }
