@@ -321,3 +321,191 @@ footer {
     background-color: #8C8C8C;
     border-radius: 10px;
   }
+
+@media screen and (max-width: 1024px) {
+    * {
+        display: block;
+        width: auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn__options {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn__students {
+        width: 700px;
+    }
+
+    .btn__staff {
+        width: 700px;
+    }
+
+    .btn__spells {
+        width: 700px;
+    }
+
+    .card__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .hp__text {
+        margin-bottom: 480px;
+    }
+
+    .knowmore__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 600px;
+
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+    }
+
+    .credit__text {
+        width: 600px;
+        word-spacing: 2px;
+        letter-spacing: 2px;
+    }
+
+    .contact__stuff {
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: auto;
+        margin-top: 25px;
+    }
+}
+
+@media screen and (max-width: 603px) {
+    * {
+        display: block;
+        width: auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .icon__nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .btn__options {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn__students {
+        width: 470px;
+    }
+
+    .btn__staff {
+        width: 470px;
+    }
+
+    .btn__spells {
+        width: 470px;
+    }
+
+    .card__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+
+    .hp__text {
+        margin-bottom: 540px;
+        width: 380px;
+        word-spacing: 2px;
+        letter-spacing: 2px;
+        font-size: 15px;
+    }
+
+    .am__text {
+        margin-bottom: 200px;
+        width: 380px;
+        word-spacing: 2px;
+        letter-spacing: 2px;
+        font-size: 15px;
+    }
+
+    .kid__img {
+        width: 380px;
+        height: 240px;
+        border-radius: 10px;
+    }
+
+    .quid__img {
+        width: 380px;
+        height: 140px;
+        border-radius: 10px;
+    }
+
+    .knowmore__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        font-size: 23px;
+    }
+
+    .btn__moreopt1 {
+        width: 400px;
+        font-size: 18px;
+    }
+
+    .btn__moreopt1:hover {
+        width: 401px;
+        font-size: 19px;
+    }
+
+    .btn__moreopt2 {
+        width: 400px;
+        font-size: 18px;
+    }
+
+    .btn__moreopt2:hover {
+        width: 401px;
+        font-size: 19px;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+    }
+
+    .itsmehi {
+        margin: 1px 35px 35px 35px;
+        height: 110px;
+        width: 110px;
+    }
+
+    .credit__text {
+        width: 420px;
+        font-size: 15px;
+        word-spacing: 2px;
+        letter-spacing: 2px;
+    }
+
+    .contact__stuff {
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: auto;
+        margin-top: 25px;
+    }
+}
