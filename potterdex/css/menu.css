@@ -178,6 +178,11 @@ body {
     border-radius: 20px;
 }
 
+.quid__img {
+    width: 700px;
+    border-radius: 20px;
+}
+
 /* .castle__icon {
     text-align: center;
     height: 150px;

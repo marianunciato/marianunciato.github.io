@@ -63,7 +63,12 @@ body {
 }
 
 .intro__text {
-    margin: 60px 350px 0px 350px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: 30px;
+    width: 300px;
     color: white;
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
@@ -260,3 +265,12 @@ footer {
     background-color: #8C8C8C;
     border-radius: 10px;
   }
+
+@media screen and (max-width: 1024px) {
+    .card {
+        display: flex;
+        text-align: center;
+        flex-direction: column-reverse;
+        margin: 20px 0px 20px 0px; 
+    }
+}
