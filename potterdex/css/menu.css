@@ -160,7 +160,7 @@ body {
     font-weight: normal;
     
 }
-
+    
 .hp__text {
     text-align: center;
     font-family: 'Roboto', sans-serif;
@@ -333,7 +333,6 @@ footer {
 
 @media screen and (max-width: 1024px) {
     * {
-        display: block;
         width: auto;
         justify-content: center;
         align-items: center;
@@ -417,7 +416,6 @@ footer {
 
 @media screen and (max-width: 603px) {
     * {
-        display: block;
         width: auto;
         justify-content: center;
         align-items: center;
