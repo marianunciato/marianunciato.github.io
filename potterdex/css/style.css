@@ -172,7 +172,7 @@ body {
     border-radius: 10px;
   }
 
-  @media screen and (max-width: 603px) {
+@media screen and (max-width: 603px) {
     * {
         display: block;
         width: auto;

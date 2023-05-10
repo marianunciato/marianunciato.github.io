@@ -197,3 +197,18 @@ footer {
     background-color: #8C8C8C;
     border-radius: 10px;
   }
+
+@media screen and (max-width: 603px) {
+
+    .intro__text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 0px;
+        margin: none;
+        padding: 0px;
+    }
+
+    
+}

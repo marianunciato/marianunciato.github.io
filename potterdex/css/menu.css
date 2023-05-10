@@ -294,6 +294,10 @@ footer {
     font-family: 'Roboto', sans-serif;
 }
 
+.user {
+    color: white;
+}
+
 .git {
     width: 48px;
     height: 48px;
@@ -344,14 +348,33 @@ footer {
 
     .btn__students {
         width: 700px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-decoration: none;
+    }
+
+    .btn__students:hover {
+        background-size: cover;
     }
 
     .btn__staff {
         width: 700px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .btn__staff:hover {
+        background-size: cover;
     }
 
     .btn__spells {
         width: 700px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .btn__spells:hover {
+        background-size: cover;
     }
 
     .card__text {
